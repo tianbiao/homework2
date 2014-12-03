@@ -1,5 +1,8 @@
+var id_number = 0;
+
 $(document).ready(function(){
 	BindToView(disks);
+	id_number = disks[disks.length-1].number+1;
 });
 
 function BindToView(disks){
@@ -56,9 +59,9 @@ function add(){
  name: $("#productName").val(),
  img:  $("#productImg").val(),
  desc: $("#productDesc").val(),
- number: disks.length
+ number: id_number
  };
-
+ id_number++;
  disks.push(newProduct);
  BindToView(disks);
  
